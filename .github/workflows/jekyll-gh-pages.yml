@@ -2,34 +2,39 @@ name: Deploy Resume to GitHub Pages
 
 on:
   push:
-    branches: ["main"]  # 监听 main 分支上的推送
+    branches: ["main"]
     paths:
       - "resumes/resume.md"  # 监听 resumes 目录下的 resume.md 文件
   workflow_dispatch:  # 允许手动触发工作流
 
+permissions:
+  contents: read   # 读取内容权限
+  pages: write     # 写入 GitHub Pages 权限
+  id-token: write  # 允许生成和写入 ID token 的权限
+
 jobs:
   build:
-    runs-on: ubuntu-latest  # 使用最新版本的 Ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4  # 检出仓库代码
+        uses: actions/checkout@v4
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5  # 设置 GitHub Pages 配置
+        uses: actions/configure-pages@v5
 
       - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1  # 使用 Jekyll 构建站点
+        uses: actions/jekyll-build-pages@v1
         with:
           source: ./  # 根目录作为 Jekyll 源目录
           destination: ./_site  # 构建后的内容存放在 _site 目录
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3  # 上传构建的静态文件到 GitHub Pages
+        uses: actions/upload-pages-artifact@v3
 
   deploy:
-    runs-on: ubuntu-latest  # 使用 Ubuntu 执行部署
-    needs: build  # 等待 build 作业完成后再执行部署
+    runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4  # 使用 GitHub Pages 部署操作
+        uses: actions/deploy-pages@v4
