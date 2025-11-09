@@ -5,22 +5,6 @@ layout: default
 <div class="resume">
   <h1>{{ page.title }}</h1>
   
-  <h2>Professional Summary</h2>
-  <p>{{ content | split: '## Skills' | first | markdownify }}</p>
-  
-  <h2>Skills</h2>
-  <ul>
-    {% assign skills_section = content | split: '## Skills' | last %}
-    {% assign skills_list = skills_section | split: '## Experience' | first %}
-    {% assign skills_lines = skills_list | split: '\n' %}
-    {% for skill in skills_lines %}
-      <li>{{ skill }}</li>
-    {% endfor %}
-  </ul>
-
-  <h2>Experience</h2>
-  <p>{{ content | split: '## Education' | first | markdownify }}</p>
-
-  <h2>Education</h2>
-  <p>{{ content | split: '## Education' | last | markdownify }}</p>
+  <!-- 直接引入 resume.md 文件的内容 -->
+  {% include_relative resumes/resume.md %}
 </div>
