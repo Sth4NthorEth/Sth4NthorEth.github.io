@@ -1,24 +1,24 @@
 ---
-layout: default
+layout: resume
 ---
 
 <div class="resume">
   <h1>{{ page.title }}</h1>
   <h2>Professional Summary</h2>
-  <p>{{ content | split: '## Skills' | first }}</p>
+  <p>{{ content | split: '## Skills' | first | markdownify }}</p>
   
   <h2>Skills</h2>
   <ul>
     {% assign skills_section = content | split: '## Skills' | last %}
-    {% assign skills_list = skills_section | split: '\n' %}
+    {% assign skills_list = skills_section | split: "\n" %}
     {% for skill in skills_list %}
-      <li>{{ skill }}</li>
+      <li>{{ skill | markdownify }}</li>
     {% endfor %}
   </ul>
 
   <h2>Experience</h2>
-  <p>{{ content | split: '## Education' | first }}</p>
+  <p>{{ content | split: '## Education' | first | markdownify }}</p>
   
   <h2>Education</h2>
-  <p>{{ content | split: '## Education' | last }}</p>
+  <p>{{ content | split: '## Education' | last | markdownify }}</p>
 </div>
