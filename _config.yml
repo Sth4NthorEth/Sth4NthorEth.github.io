@@ -1,9 +1,12 @@
-title: "My Resume"
-description: "My professional resume"
 theme: minima  # 使用 Jekyll 官方的 minima 主题
-baseurl: ""  # 如果是根目录发布，无需修改
-collections:
-  resumes:
-    output: true
-    permalink: /resumes/:name
+markdown: kramdown  # 使用kramdown解析Markdown文件
 
+# 页面布局设置
+defaults:
+  - scope:
+      path: ""  # 作用于所有路径
+      type: "pages"  # 作用于页面
+    values:
+      layout: "resume"  # 设置resume为页面布局
+
+# 在根目录下使用resume.html作为简历页面的布局
