@@ -4,7 +4,8 @@ on:
   push:
     branches: ["main"]  # 监听 main 分支的推送
     paths:
-      - "resumes/resume.md"  # 监听 resumes 目录下的 resume.md 文件
+      - "**/*.html"  # 监听所有 HTML 文件的变动，包括 resume.html
+      - "**/*.md"    # 监听所有 MD 文件的变动，如果你仍然在用 MD 文件的部分内容
   workflow_dispatch:  # 允许手动触发工作流
 
 permissions:
