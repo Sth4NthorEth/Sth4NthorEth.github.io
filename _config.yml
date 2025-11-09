@@ -5,3 +5,5 @@ baseurl: ""  # 如果是根目录发布，无需修改
 collections:
   resumes:
     output: true
+    permalink: /resumes/:name
+
