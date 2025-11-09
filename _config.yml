@@ -2,3 +2,6 @@ title: "My Resume"
 description: "My professional resume"
 theme: jekyll-theme-slate  # 选择您喜欢的 Jekyll 主题
 baseurl: ""  # 如果是根目录发布，无需修改
+collections:
+  resumes:
+    output: true
