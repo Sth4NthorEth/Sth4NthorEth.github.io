@@ -39,6 +39,24 @@
         p {
             margin: 10px 0;
         }
+        .education-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .education-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        .education-item h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .education-item p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -54,13 +72,25 @@
             </ul>
 
             <h2>教育背景</h2>
-            <ul>
-                <li><strong>院校名称：</strong>哈尔滨工业大学深圳校区</li>
-                <li><strong>就读时间：</strong>2021.9 - 2025.6</li>
-                <li><strong>专业：</strong>数据科学（DS）</li>
-                <li><strong>绩点（GPA）：</strong>3.85</li>
-            </ul>
-            
+            <div class="education-info">
+                <div class="education-item">
+                    <h3>院校名称</h3>
+                    <p>哈尔滨工业大学深圳校区</p>
+                </div>
+                <div class="education-item">
+                    <h3>就读时间</h3>
+                    <p>2021.9 - 2025.6</p>
+                </div>
+                <div class="education-item">
+                    <h3>专业</h3>
+                    <p>数据科学（DS）</p>
+                </div>
+                <div class="education-item">
+                    <h3>绩点（GPA）</h3>
+                    <p>3.85</p>
+                </div>
+            </div>
+
             <h3>相关课程：</h3>
             <ul>
                 <li>高级语言程序设计（100）</li>
