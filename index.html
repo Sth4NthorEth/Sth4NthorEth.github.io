@@ -59,16 +59,12 @@
         }
         .course-list {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 10px;
         }
         .course-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .course-item p {
-            margin: 0;
+            flex: 1;
+            min-width: 200px;
             font-size: 14px;
         }
     </style>
@@ -108,24 +104,19 @@
             <h2>相关课程</h2>
             <div class="course-list">
                 <div class="course-item">
-                    <p><strong>高级语言程序设计</strong></p>
-                    <p>100</p>
+                    <p><strong>高级语言程序设计：</strong>100</p>
                 </div>
                 <div class="course-item">
-                    <p><strong>Web 开发技术</strong></p>
-                    <p>95.2</p>
+                    <p><strong>Web 开发技术：</strong>95.2</p>
                 </div>
                 <div class="course-item">
-                    <p><strong>数据结构与算法</strong></p>
-                    <p>90</p>
+                    <p><strong>数据结构与算法：</strong>90</p>
                 </div>
                 <div class="course-item">
-                    <p><strong>计算机网络</strong></p>
-                    <p>93.2</p>
+                    <p><strong>计算机网络：</strong>93.2</p>
                 </div>
                 <div class="course-item">
-                    <p><strong>软件工程专业导论</strong></p>
-                    <p>94</p>
+                    <p><strong>软件工程专业导论：</strong>94</p>
                 </div>
             </div>
 
